@@ -21,15 +21,15 @@ runs:
           BIN_URL="https://github.com/bitnami/kubecfg/releases/download/v${VERSION}/kubecfg-linux-amd64"
           curl -sL ${BIN_URL} -o /tmp/kubecfg
           chmod +x /tmp/kubecfg
-      - name: "Add kubecfg binary to /usr/local/bin"
-        shell: bash
-        run: |
-          sudo cp /tmp/kubecfg /usr/local/bin
-      - name: "Cleanup tmp"
-        shell: bash
-        run: |
-          rm -f /tmp/kubecfg
-      - name: "Verify correct installation of binary"
-        shell: bash
-        run: |
-          kubecfg version
+    - name: "Add kubecfg binary to /usr/local/bin"
+      shell: bash
+      run: |
+        sudo cp /tmp/kubecfg /usr/local/bin
+    - name: "Cleanup tmp"
+      shell: bash
+      run: |
+        rm -f /tmp/kubecfg
+    - name: "Verify correct installation of binary"
+      shell: bash
+      run: |
+        kubecfg version
